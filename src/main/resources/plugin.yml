@@ -1,0 +1,36 @@
+main: me.kagglu.kagglupunishment.KaggluPunishment
+name: KaggluPunishment
+version: 1.0
+author: Kagglu
+api-version: 1.13
+commands:
+  delwarn:
+    description: deletes a warning
+    usage: /delwarn (username) (warning index)
+    permission: kagglupunishment.delwarn
+  warn:
+    description: warns a player
+    usage: /warn (username) [reason]
+    permission: kagglupunishment.warn
+  warnings:
+    description: displays the warnings of the user
+    usage: /warnings
+    aliases: [warns, lookup]
+
+permissions:
+  kagglupunishment.delwarn:
+    description: allows access to /delwarn command
+    default: op
+  kagglupunishment.warn:
+    description: allows access to /warn command
+    default: op
+  kagglupunishment.warnings:
+    description: allows access to /warnings command using a player as an argument
+    default: op
+  kagglupunishment.*:
+    description: kagglupunishment wildcard
+    default: op
+    children:
+      kagglupunishment.delwarn: true
+      kagglupunishment.warn: true
+      kagglupunishment.warnings: true
